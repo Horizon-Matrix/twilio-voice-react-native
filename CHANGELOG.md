@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0-rc.11](https://github.com/Horizon-Matrix/twilio-voice-react-native/compare/v1.7.0-rc.10...v1.7.0-rc.11) (2025-08-15)
+
 ## [1.7.0-rc.10](https://github.com/Horizon-Matrix/twilio-voice-react-native/compare/v1.7.0-rc.9...v1.7.0-rc.10) (2025-08-15)
 
 ## [1.7.0-rc.9](https://github.com/Horizon-Matrix/twilio-voice-react-native/compare/v1.7.0-rc.8...v1.7.0-rc.9) (2025-08-15)
