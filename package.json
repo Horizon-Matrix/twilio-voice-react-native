@@ -49,9 +49,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Horizon-Matrix/twilio-voice-react-native.git"
+    "url": "git+https://github.com/Horizon-Matrix/twilio-voice-react-native.git"
   },
-  "author": "Michael Huynh <mhuynh@twilio.com> (https://github.com/twilio)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/twilio/twilio-voice-react-native/issues"
