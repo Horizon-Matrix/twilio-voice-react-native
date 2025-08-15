@@ -1,6 +1,6 @@
 {
   "name": "@horizon-matrix/voice-react-native-sdk",
-  "version": "1.7.0-rc.4",
+  "version": "1.7.0-rc.5",
   "description": "HM Fork of Twilio Voice React Native SDK",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -36,7 +36,7 @@
     "check": "yarn run build:constants && yarn run build:errors && yarn run build:docs && yarn run check:api && yarn run check:type && yarn run check:lint && yarn run check:test --coverage",
     "pods": "cd test/app && pod-install --quiet",
     "prepare": "yarn run build:constants && bob build",
-    "github-release": "git push --follow-tags && gh release create $(node -p \"require('./package.json').version\") -t $(node -p \"require('./package.json').version\") -n \"See CHANGELOG.md for details.\" && npm publish",
+    "github-release": "git push --follow-tags && gh release create $(node -p \"require('./package.json').version\") -t $(node -p \"require('./package.json').version\") -n \"See CHANGELOG.md for details.\" && npm publish --tag rc",
     "release": "npm run bump --",
     "bump": "standard-version --releaseAs",
     "release:rc": "npm run prepare && standard-version --prerelease rc && npm run github-release -- --prerelease",
