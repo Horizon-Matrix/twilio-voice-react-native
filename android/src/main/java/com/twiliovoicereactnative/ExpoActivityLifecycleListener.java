@@ -5,8 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import expo.modules.core.interfaces.ReactActivityLifecycleListener;
 
-public class ExpoActivityLifecycleListener implements ReactActivityLifecycleListener {
-  VoiceActivityProxy voiceActivityProxy;
+public class ExpoActivityLifecycleListeners implements ReactActivityLifecycleListener {
+  private VoiceActivityProxy voiceActivityProxy;
 
   @Override
   public void onCreate(Activity activity, Bundle savedInstanceState) {
