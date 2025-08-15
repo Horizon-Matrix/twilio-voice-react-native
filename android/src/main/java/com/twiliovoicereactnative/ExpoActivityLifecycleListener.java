@@ -15,12 +15,17 @@ public class ExpoActivityLifecycleListener implements ReactActivityLifecycleList
   }
 
   @Override
-  public void onNewIntent(Intent intent) {
-    this.voiceActivityProxy.onNewIntent(intent);
+  public boolean onNewIntent(Intent intent) {
+    if (this.voiceActivityProxy != null) {
+      this.voiceActivityProxy.onNewIntent(intent);
+    }
+    return false;
   }
 
   @Override
   public void onDestroy(Activity activity) {
-    this.voiceActivityProxy.onDestroy();
+    if (this.voiceActivityProxy != null) {
+      this.voiceActivityProxy.onDestroy();
+    }
   }
 }
