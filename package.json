@@ -1,7 +1,7 @@
 {
-  "name": "@twilio/voice-react-native-sdk",
-  "version": "1.6.2-dev",
-  "description": "Twilio Voice React Native SDK",
+  "name": "@horizon-matrix/voice-react-native-sdk",
+  "version": "1.7.0-rc.1",
+  "description": "HM Fork of Twilio Voice React Native SDK",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/index.d.ts",
@@ -36,7 +36,10 @@
     "check": "yarn run build:constants && yarn run build:errors && yarn run build:docs && yarn run check:api && yarn run check:type && yarn run check:lint && yarn run check:test --coverage",
     "pods": "cd test/app && pod-install --quiet",
     "prepare": "yarn run build:constants && bob build",
-    "release": "release",
+    "github-release": "git push --follow-tags && gh release create $(node -p \"require('./package.json').version\") -t $(node -p \"require('./package.json').version\") -n \"See CHANGELOG.md for details.\" && npm publish",
+    "release": "npm run bump --",
+    "bump": "standard-version --releaseAs",
+    "release:rc": "npm run prepare && standard-version --prerelease rc && npm run github-release -- --prerelease",
     "test": "jest"
   },
   "keywords": [
@@ -44,7 +47,7 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/twilio/twilio-voice-react-native",
+  "repository": "https://github.com/horizon-matrix/twilio-voice-react-native",
   "author": "Michael Huynh <mhuynh@twilio.com> (https://github.com/twilio)",
   "license": "MIT",
   "bugs": {
@@ -52,7 +55,7 @@
   },
   "homepage": "https://github.com/twilio/twilio-voice-react-native#readme",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://npm.pkg.github.com/horizon-matrix"
   },
   "devDependencies": {
     "@babel/core": "7.23.7",
@@ -80,6 +83,7 @@
     "react": "18.2.0",
     "react-native": "0.72.9",
     "react-native-builder-bob": "^0.18.0",
+    "standard-version": "^9.5.0",
     "twilio": "^4.21.0",
     "twilio-release-tool": "^1.0.2",
     "typescript": "^4.1.3"
@@ -95,12 +99,6 @@
       "<rootDir>/lib",
       "<rootDir>/types"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "yarn run check"
-    }
   },
   "commitlint": {
     "extends": [
