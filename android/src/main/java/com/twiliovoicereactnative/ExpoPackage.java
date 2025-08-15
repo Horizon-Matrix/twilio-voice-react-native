@@ -2,11 +2,13 @@ package com.twiliovoicereactnative;
 
 import android.content.Context;
 import expo.modules.core.interfaces.Package;
+import expo.modules.core.interfaces.ReactActivityLifecycleListener;
+import expo.modules.core.interfaces.ApplicationLifecycleListener;
+
 import java.util.Collections;
 import java.util.List;
 
-import expo.modules.core.interfaces.ReactActivityLifecycleListener;
-import expo.modules.core.interfaces.ApplicationLifecycleListener;
+
 
 public class ExpoPackage implements Package {
   @Override
