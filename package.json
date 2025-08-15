@@ -35,7 +35,7 @@
     "check:api": "git diff --exit-code src/error/generated.ts api/",
     "check": "yarn run build:constants && yarn run build:errors && yarn run build:docs && yarn run check:api && yarn run check:lint && yarn run check:test --coverage",
     "pods": "cd test/app && pod-install --quiet",
-    "prepare": "yarn run build:constants",
+    "prepare": "yarn run build:constants && bob build",
     "github-release": "git push --follow-tags && gh release create $(node -p \"require('./package.json').version\") -t $(node -p \"require('./package.json').version\") -n \"See CHANGELOG.md for details.\" && npm publish --tag rc",
     "release": "npm run bump --",
     "bump": "standard-version --releaseAs",
@@ -89,7 +89,7 @@
     "standard-version": "^9.5.0",
     "twilio": "^4.21.0",
     "twilio-release-tool": "^1.0.2",
-    "typescript": "^4.1.3"
+    "typescript": "^5.8.3"
   },
   "peerDependencies": {
     "react": "*",
